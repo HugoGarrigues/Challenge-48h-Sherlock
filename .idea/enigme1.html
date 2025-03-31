@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme Sherlock Holmes</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; padding: 20px; }
+        .word { cursor: pointer; }
+        #sentence { margin-top: 20px; font-weight: bold; }
+        #message { margin-top: 20px; font-size: 1.2em; color: green; }
+    </style>
+</head>
+<body>
+<h2>Reconstituez la célèbre phrase !</h2>
+<p id="story">L'affaire semblait compliquée au premier abord, mais en y regardant de plus près, tout devenait <span class="word">Élémentaire,</span>
+    Les indices s'alignaient parfaitement, comme si quelqu'un voulait que nous trouvions la solution. Mon instinct me disait que ce n'était pas un simple vol, mais un coup monté.
+    J'avais déjà une hypothèse, et elle se confirmait à chaque détail. "C'est évident, <span class="word">mon</span> ami", murmurai-je en scrutant la scène du crime.
+    À cet instant, une voix derrière moi s'exclama : "Mais bien sûr ! Tout est clair maintenant !".
+    Je me retournai et souris. "Exactement, <span class="word">cher</span> <span class="word">Watson!</span>".</p>
+
+<p id="sentence"></p>
+<button onclick="checkSentence()">Vérifier</button>
+<p id="message"></p>
+
+<script>
+    const correctOrder = ["Élémentaire,", "mon", "cher", "Watson!"];
+    let userSentence = [];
+
+    document.querySelectorAll(".word").forEach(element => {
+        element.onclick = () => selectWord(element.textContent, element);
+    });
+
+    function selectWord(word, element) {
+        if (!userSentence.includes(word)) {
+            userSentence.push(word);
+            document.getElementById("sentence").textContent = userSentence.join(" ");
+        }
+    }
+
+    function checkSentence() {
+        if (JSON.stringify(userSentence) === JSON.stringify(correctOrder)) {
+            document.getElementById("message").textContent = "Bravo ! Vous avez trouvé la phrase !";
+        } else {
+            document.getElementById("message").textContent = "Essayez encore !";
+            document.getElementById("message").style.color = "red";
+        }
+    }
+</script>
+</body>
+</html>
