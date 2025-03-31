@@ -20,7 +20,7 @@ function resetCoffre() {
 // Afficher les indices selon le nombre d'essais
 function afficherIndices() {
     const containerIndices = document.querySelector('.enigme4-indices');
-    containerIndices.innerHTML = ''; // Réinitialiser indices affichés
+    containerIndices.innerHTML = ''; 
     for (let i = 0; i < tentatives - 1 && i < indices.length; i++) {
         const p = document.createElement('p');
         p.textContent = indices[i];
