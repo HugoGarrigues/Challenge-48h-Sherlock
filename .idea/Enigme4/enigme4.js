@@ -5,7 +5,7 @@ let tentatives = 0;
 // Indices à afficher progressivement
 const indices = [
     "🕵️‍♂️ Indice 1 : Adresse de Sherlock Holmes → 221",
-    "📚 Indice 2 : Nombre d'aventures écrites par Conan Doyle → 60",
+    "📚 Indice 2 : Nombre d'aventures écrites par Conan Doyle → 62",
     "📅 Indice 3 : Année de ma première apparition → 1887"
 ];
 
@@ -54,7 +54,7 @@ function animationOuverture() {
 
 document.querySelector('.enigme4-btn-verifier').addEventListener('click', () => {
     const resultat = document.querySelector('.enigme4-message');
-    if (combinaison.join('') === '37311') {
+    if (combinaison.join('') === '51811') {
         resultat.style.color = 'lightgreen';
         resultat.textContent = '✅ Impressionnant ! Le coffre s\'ouvre.';
         animationOuverture();
