@@ -4,24 +4,27 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Énigme Sherlock Holmes</title>
-        <style>
-            body { font-family: Arial, sans-serif; text-align: center; margin: 50px; padding: 20px; }
-            .word { cursor: pointer; }
-            #sentence { margin-top: 20px; font-weight: bold; }
-            #message { margin-top: 20px; font-size: 1.2em; color: green; }
-        </style>
+        <link rel="stylesheet" href="enigme1.css">
     </head>
-    <body>
-        <h2>Reconstituez la célèbre phrase !</h2>
-        <p id="story">L'affaire semblait compliquée au premier abord, mais en y regardant de plus près, tout devenait <span class="word">Élémentaire,</span>
-            Les indices s'alignaient parfaitement, comme si quelqu'un voulait que nous trouvions la solution. Mon instinct me disait que ce n'était pas un simple vol, mais un coup monté.
-            J'avais déjà une hypothèse, et elle se confirmait à chaque détail. "C'est évident, <span class="word">mon</span> ami", murmurai-je en scrutant la scène du crime.
-            À cet instant, une voix derrière moi s'exclama : "Mais bien sûr ! Tout est clair maintenant !".
-            Je me retournai et souris. "Exactement, <span class="word">cher</span> <span class="word">Watson!</span>".</p>
+    <body/>
+        <div class="enigme">
+            <p id="story">
+                L'affaire semblait compliquée au premier abord, mais en y regardant de plus près, tout devenait
+                <span class="word">Élémentaire,</span>
+                Les indices s'alignaient parfaitement, comme si quelqu'un voulait que nous trouvions la solution.
+                Mon instinct me disait que ce n'était pas un simple vol, mais un coup monté.
+                J'avais déjà une hypothèse, et elle se confirmait à chaque détail. "C'est évident,
+                <span class="word">mon</span> ami", murmurai-je en scrutant la scène du crime.
+                À cet instant, une voix derrière moi s'exclama : "Mais bien sûr ! Tout est clair maintenant !".
+                Je me retournai et souris. "Exactement,
+                <span class="word">cher</span> <span class="word">Watson!</span>".
+            </p>
+        </div>
 
         <p id="sentence"></p>
         <button onclick="checkSentence()">Vérifier</button>
         <p id="message"></p>
+
 
         <script>
             const correctOrder = ["Élémentaire,", "mon", "cher", "Watson!"];
@@ -39,13 +42,23 @@
             }
 
             function checkSentence() {
+                const message = document.getElementById("message");
                 if (JSON.stringify(userSentence) === JSON.stringify(correctOrder)) {
-                    document.getElementById("message").textContent = "Bravo ! Vous avez trouvé la phrase !";
+                    message.textContent = "Féllicitations !";
+                    message.style.color = "green";
+
+                    // Redirection après une petite pause (1 seconde)
+                    setTimeout(() => {
+                        window.location.href = "../Enigme2/enigme2.html";
+                    }, 1000);
                 } else {
-                    document.getElementById("message").textContent = "Essayez encore !";
-                    document.getElementById("message").style.color = "red";
+                    message.textContent = "Essayez encore !";
+                    message.style.color = "red";
                 }
             }
+
+
+
         </script>
     </body>
 </html>

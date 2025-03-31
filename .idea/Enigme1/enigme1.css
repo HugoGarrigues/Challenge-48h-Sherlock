@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    padding: 20px;
+    background-color: #000;
+    color: #f0e6d2;
+}
+
+.word {
+    cursor: pointer;
+    color: #f0e6d2;
+    font-weight: bold;
+}
+
+.word:hover {
+    text-decoration: underline;
+}
+
+#sentence {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: green;
+}
+.enigme {
+    background-image: url('../img/enigme4_parchemin.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 70px 60px 80px;
+    width: 520px;
+    margin: 0 auto 20px auto;
+    color: #3c2f21;
+    font-family: 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+    font-style: italic;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    border-radius: 10px;
+}
