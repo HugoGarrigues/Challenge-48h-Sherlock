@@ -1,0 +1,121 @@
+body {
+    background-color: #1a1a1a;
+    font-family: 'Times New Roman', serif;
+    color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.enigme4-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.enigme4-parchemin {
+    background-image: url('img/enigme4_parchemin.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 70px 60px 80px; /* haut droite bas gauche */
+    width: 520px; /* ajustement précis */
+    margin: 0 auto 20px auto;
+    color: #3c2f21;
+    font-family: 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+    font-style: italic;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    border-radius: 10px;
+}
+
+
+
+.enigme4-parchemin p {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+    font-style: italic;
+}
+
+
+.enigme4-coffre {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+.engrenage {
+    width: 60px;
+    height: 60px;
+    background-color: #5c472c;
+    border-radius: 50%;
+    line-height: 60px;
+    font-size: 26px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.5s ease-in-out, background-color 0.3s;  
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.engrenage:hover {
+    background-color: #927043;
+}
+
+.enigme4-btn-verifier {
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.enigme4-btn-verifier:hover {
+    background-color: #666;
+}
+
+.enigme4-message {
+    margin-top: 20px;
+    font-weight: bold;
+    min-height: 24px;
+}
+
+.enigme4-manuscrit {
+    background-color: #d9c7a9;
+    color: #3c2f21;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+    font-size: 18px;
+    font-family: cursive;
+    animation: apparaitre 2s ease-in-out;
+}
+
+@keyframes apparaitre {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.enigme4-indices {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    color: #ccc;
+    font-size: 16px;
+    text-align: left;
+    display: inline-block;
+}
+
+.enigme4-indices p {
+    margin: 5px 0;
+}
