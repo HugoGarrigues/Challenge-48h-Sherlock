@@ -7,16 +7,6 @@ body {
     color: #f0e6d2;
 }
 
-.word {
-    cursor: pointer;
-    color: #f0e6d2;
-    font-weight: bold;
-}
-
-.word:hover {
-    text-decoration: underline;
-}
-
 #sentence {
     margin-top: 20px;
     font-weight: bold;
@@ -43,4 +33,15 @@ body {
     font-style: italic;
     box-shadow: 0 5px 15px rgba(0,0,0,0.6);
     border-radius: 10px;
+}
+
+.verifier {
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }

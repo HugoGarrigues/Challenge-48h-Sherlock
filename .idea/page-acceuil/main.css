@@ -7,7 +7,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #000;
-    background-image: url('../resources/parchemin.jpg');
+    background-image: none;
     color: #f0e6d2;
 }
 
