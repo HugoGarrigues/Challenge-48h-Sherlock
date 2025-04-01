@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Challenge 2</title>
+<link rel="stylesheet" href="style_chal2.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<script src="chal2.js"></script>
+
+<header>
+    <div>
+        <h1>Sherlock</h1>
+        <h2>cherché bien avec votre fameuse loupe</h2>
+        <h3>un message vous est addressé dans ce journal trouvé sur la scene de crime</h3>
+    </div>
+</header>
+<body>
+    <div>
+        <div class="all"></div>
+        <div class="head-j">
+            <div class="upper_head">
+                <h2><span class="sang">ser<span class="game-letter">i</span>e</span></h2>
+                <h2>of</h2>
+                <h2><span class="sang"><span class="game-letter">m</span>urders</span></h2>
+            </div>
+            <div class="title">
+                <h1>The Daily Telegraph</h1>
+            </div>
+            <div class="lower_head">
+                <h2>n</span>°216</h2>
+                <h2>Tuesday April 1 1920</h2>
+                <h2>1£</h2>
+            </div>
+        </div>
+
+        <article>
+            <h2>THE WHITECHAPEL HORROR: A SERIES OF GRUESOME MURDERS</h2>
+            <p><b>LONDON, <span class="sang">Mar<span class="game-letter">c</span>h</span> 30.</b> — Fear grips the
+                streets of Whitechapel as yet another body has been discovered, marking the fourth such brutal slaying
+                in recent weeks. The latest victim, a woman of middle years, was found in an alleyway behind Commercial
+                Street, her throat cruelly slashed. The police remain baffled, and speculation abounds that the killer,
+                whom the public has begun calling "The Phantom of Whitechapel," is no common criminal, but a fiend of
+                unspeakable cunning.</p>
+            <p>Inspector Lestrade of <span class="sang">Sc<span class="game-letter">o</span>tland</span> Yard has
+                assured the public that every measure is being taken to apprehend the perpetrator, though no suspect has
+                yet been identified. In a turn of great intrigue, it has been confirmed that the renowned detective Mr.
+                Sherlock Holmes has taken interest in the case. "There is a singular pattern to these atrocities,"
+                remarked Holmes when approached outside 221B Baker Street, "and I intend to uncover it before the
+                villain strikes again."</p>
+            <p>Residents of the area have taken to locking their door before dusk, while whispers of conspiracy and dark
+                doings grow ever louder. Will Mr. Holmes succeed where the Yard has thus far faltered? The city waits in
+                anxious anticipation.</p>
+        </article>
+
+        <article>
+            <h2>HIS MAJESTY ADDRESSES THE EMPIRE</h2>
+            <p><b>LONDON, March 30.</b> — His Majesty King Edward VII today delivered a <span class="sang">sole<span
+                        class="game-letter">m</span>n</span> address at Buckingham Palace, reaffirming Britain’s
+                commitment to progress and prosperity. “We stand on the threshold of a new era,” declared His Majesty,
+                “and the strength of our Empire is found in the unity of its people.” Citizens gathered outside the
+                palace gates to cheer the <span class="sang">Sovere<span class="game-letter">i</span>g<span
+                        class="game-letter">n</span></span>, whose words were met with <span class="sang"><span
+                        class="game-letter">g</span>reat</span> admiration.</p>
+        </article>
+
+        <article>
+            <h2>EXPANSION <span class="sang">O<span class="game-letter">F</span></span> THE RAILWAYS: A NEW ERA OF
+                INDUSTRY</h2>
+            <p><b>BIRMINGHAM, March 29.</b> — The Midlands Railway <span class="sang">C<span
+                        class="game-letter">o</span>mpany</span> has announced the completion of a new line connecting
+                industrial hubs, a feat expected to enhance commerce and trade. Engineers herald this as the dawn of
+                unparalleled economic growth, with steam locomotives now covering distances once deemed <span
+                    class="sang">insu<span class="game-letter">r</span>mountable</span>.</p>
+        </article>
+
+        <article>
+            <h2>THEATRE: A TRIUMPHANT PERFORMANCE AT <span class="sang">DRUR<span class="game-letter">Y</span> </span>
+                LANE</h2>
+            <p><b><span class="sang">L<span class="game-letter">O</span>NDON</span>, March 28.</b> — Last evening, a
+                resplendent performance of Mr. Shakespeare's Hamlet was received with tumultuous applause at Drury Lane
+                Theatre. The leading gentleman, lauded for his impassioned portrayal of the melancholy prince, has been
+                deemed “a talent of the highest order.” Patrons, adorned in their finest evening attire, filled the
+                grand hall, securing this production as the most talked-<span class="sang">abo<span
+                        class="game-letter">u</span>t</span> event of the season.</p>
+        </article>
+
+        <article>
+            <h2><span class="sang">ADVERTI <span class="game-letter">S</span>EMENTS</span></h2>
+            <p><b>Dr. <span class="sang">Fot<span class="game-letter">h</span>ergill’s</span> Elixir:</b> A remedy for
+                all manner of ailments, now available at chemists across the city. Recommended by physicians!</p>
+            <p><b>Mrs. Winthrop’s Finishing School:</b> Enrollments now open for young ladies <span class="sang">se<span
+                        class="game-letter">e</span>king</span> refinement and etiquette under the finest tutelage.</p>
+            <p><b>Steam Carriages for Hire:</b> Travel in comfort and style. Enquire at 14 Pall Mall for <span
+                    class="sang"><span class="game-letter">r</span>ates</span>.</p>
+        </article>
+        <div class="footer-j">
+            <hr>
+            <p>Printed and Published by The The Daily Telegraph, Fleet Street, <span class="sang"><span
+                        class="game-letter">L</span>ondon</span>. Est. 1920.</p>
+            <p>Autor:<span class="sang"><span class="game-letter">C</span>letus</span> <span class="sang"><span
+                            class="game-letter">K</span>eglle</span></p>
+        </div>
+    </div>
+</body>
+<footer>
+    <div>
+        <input type="text" id="playerInput" placeholder="Entrez la phrase ici..." />
+        <button onclick="checkAnswer()">Valider</button>
+
+
+        <p id="hint">Indice : Regardez sous la lampe dans l'illustration...</p>
+
+
+        <button id="nextButton" style="display: none;" onclick="nextPage()">Suivant</button>
+    </div>
+</footer>
+
+</html>
