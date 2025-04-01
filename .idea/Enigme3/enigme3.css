@@ -82,3 +82,13 @@ body {
     color: white;
     border-radius: 20px;
 }
+
+.next-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #008d97;
+    color: white;
+    border-radius: 20px;
+}
