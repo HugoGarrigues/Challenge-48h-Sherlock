@@ -10,23 +10,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const hintElement = document.getElementById("hint");
     const result = document.getElementById("result");
     const retryButton = document.createElement("button");
+    retryButton.textContent = "Réessayer";
+    retryButton.style.display = "none";
+    retryButton.classList.add("retry-button");
+    document.querySelector(".container").appendChild(retryButton);
+    retryButton.addEventListener("click", resetGame);
 
-
-    // Création du bouton "Passer à l'énigme suivante"
-    const nextPageButton = document.createElement("button");
-    nextPageButton.textContent = "Passer à l'énigme suivante";
-    nextPageButton.style.display = "none"; // Caché au départ
-    nextPageButton.classList.add("next-button");
-    document.querySelector(".container").appendChild(nextPageButton);
-    nextPageButton.addEventListener("click", function () {
-        window.location.href = "../Enigme4/enigme4.html"; // Remplacez par l'URL de la page suivante
+    const restartButton = document.createElement("button");
+    restartButton.textContent = "Recommencer";
+    restartButton.style.display = "none";
+    restartButton.classList.add("restart-button");
+    document.querySelector(".container").appendChild(restartButton);
+    restartButton.addEventListener("click", function() {
+        resetGame();
+        restartButton.style.display = "none";
     });
+
 
     function pressColor(letter) {
         if (isProcessing) return; // Empêcher le spam de clics
         isProcessing = true;
 
-        if (clickIndex < codeSequence.length) {
+        if (clickIndex < circles.length) {
             if (isCorrectSoFar && letter === codeSequence[clickIndex]) {
                 circles[clickIndex].style.backgroundColor = "green";
             } else {
@@ -37,8 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
             clickIndex++;
 
             if (userInput.length === codeSequence.length) {
-                setTimeout(checkCode, 500); // Laisser le temps d'afficher la couleur avant de vérifier
-
+                setTimeout(checkCode, 300); // Laisser le temps d'afficher la couleur avant de vérifier
             } else {
                 isProcessing = false;
             }
@@ -47,29 +51,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkCode() {
         if (userInput === codeSequence) {
-            result.textContent = "Indice : Le médicament prescrit est extrêmement rare et spécifique.";
+            result.textContent = "Indice: Le médicament prescrit est extrêmement rare et spécifique.";
             result.style.color = "black";
             failedAttempts = 0;
+            // Affiche le bouton "Suivant" uniquement si le code est correct
             document.querySelector(".back-button").style.display = "inline-block";
-
+            // On affiche également le bouton de réinitialisation si besoin
+            restartButton.style.display = "block";
         } else {
             failedAttempts++;
             result.textContent = "Ce n'est pas le bon code.";
             result.style.color = "red";
+            retryButton.style.display = "block";
+
             if (failedAttempts === 3) {
                 result.textContent = "Trop d'échecs ! Voici un indice : lis bien l'article !";
                 result.style.color = "black";
             }
+
             if (failedAttempts === 5) {
                 result.textContent = "Indice : L'article contient le code couleur des cercles !";
+                // Correction éventuelle : on pourrait ajuster ici plutôt que result.style.display = "black";
             }
         }
-        // Affiche toujours le bouton "Recommencer" pour permettre de réessayer, même en cas d'erreur
-        restartButton.style.display = "block";
         isProcessing = false;
     }
-
-
 
     function resetGame() {
         userInput = "";
@@ -87,4 +93,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.pressColor = pressColor;
 });
-
