@@ -48,12 +48,12 @@ function animationOuverture() {
 
     setTimeout(() => {
         const coffre = document.querySelector('.enigme4-coffre');
-        coffre.innerHTML = '<div class="enigme4-manuscrit">📜 Bravo, vous avez percé le mystère ! 📜</div>';
+        coffre.innerHTML = '<div class="enigme4-manuscrit">📜 « Le papier retrouvé provient d un manuscrit médical rejeté par plusieurs éditeurs. » 📜</div>';
     }, 2000);
 
     setTimeout(() => {
         window.location.href = '../Enigme5/enigme5.html';
-    }, 10000);
+    }, 5000);
 }
 
 document.querySelector('.enigme4-btn-verifier').addEventListener('click', () => {
