@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.newspaper').addEventListener('click', function(e) {
         if (e.target === hiddenMessage || hiddenMessage.contains(e.target)) {
             hiddenMessage.classList.add('revealed');
-            addToInventory('Nom caché: James');
+            addToInventory('Indice: 5');
         }
     });
     
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const answer = document.getElementById('answer1').value.trim().toLowerCase();
         const message = document.getElementById('message1');
         
-        if (answer === 'james') {
-            message.textContent = 'Correct! Vous avez trouvé l\'indice caché.';
+        if (answer === '5') {
+            message.textContent = 'Correct! Vous avez trouvé le premier chiffre caché !.';
             message.className = 'message success';
             
             setTimeout(() => {
@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const answer = document.getElementById('answer3').value.trim().toLowerCase();
         const message = document.getElementById('message3');
         
-        if (answer === 'grand pilier pont histoire du chiffrement') {
+        if (answer === 'un seul fait peut valoir mille suppositions') {
             message.textContent = 'Excellent! Vous avez déchiffré le message.';
             message.className = 'message success';
-            addToInventory('Message déchiffré: Grand pilier pont histoire du chiffrement');
+            addToInventory('Message déchiffré: UN SEUL FAIT PEUT VALOIR MILLE SUPPOSITIONS');
             setTimeout(() => {
                 document.querySelector('.scene.active').classList.remove('active');
                 document.getElementById('scene4').classList.add('active');
@@ -104,10 +104,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const answer = document.getElementById('answer5').value.trim();
         const message = document.getElementById('message5');
         
-        if (answer === '1895') {
+        if (answer === '5517') {
             message.textContent = 'Correct! Vous avez trouvé les quatre chiffres.';
             message.className = 'message success';
-            addToInventory('Code secret: 1895');
+            addToInventory('Code secret: 5517');
             setTimeout(() => {
                 document.querySelector('.scene.active').classList.remove('active');
                 document.getElementById('scene6').classList.add('active');
@@ -119,18 +119,59 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    document.getElementById('finalButton').addEventListener('click', function() {
+
+
+    let selectedSuspect = null; // Variable pour stocker le suspect choisi
+
+// Écouteurs d'événements pour les boutons des suspects
+document.getElementById("suspect1").addEventListener("click", function() {
+    selectedSuspect = 1;
+    updateFinalButtonState();
+});
+
+document.getElementById("suspect2").addEventListener("click", function() {
+    selectedSuspect = 2;
+    updateFinalButtonState();
+});
+
+document.getElementById("suspect3").addEventListener("click", function() {
+    selectedSuspect = 3;
+    updateFinalButtonState();
+});
+
+document.getElementById("suspect4").addEventListener("click", function() {
+    selectedSuspect = 4;
+    updateFinalButtonState();
+});
+
+function updateFinalButtonState() {
+    document.getElementById('finalButton').disabled = false;
+}
+document.getElementById('finalButton').addEventListener('click', function() {
+
+    const endTime = Date.now();
+    const elapsedTime = new Date(endTime - startTime);
+    const minutes = elapsedTime.getUTCMinutes().toString().padStart(2, '0');
+    const seconds = elapsedTime.getUTCSeconds().toString().padStart(2, '0');
+    finalTime.textContent = `${minutes}:${seconds}`;
+
+    if (selectedSuspect === 3) {
         clearInterval(timerInterval);
-        const endTime = Date.now();
-        const elapsedTime = new Date(endTime - startTime);
-        const minutes = elapsedTime.getUTCMinutes().toString().padStart(2, '0');
-        const seconds = elapsedTime.getUTCSeconds().toString().padStart(2, '0');
-        finalTime.textContent = `${minutes}:${seconds}`;
-        congratulations.style.display = 'block';
-    });
+        document.getElementById("congratulations").style.display = 'block';
+        document.getElementById("wrongAnswer").style.display = 'none';
+    } else {
+        document.getElementById("wrongAnswer").style.display = 'block';
+        document.getElementById("congratulations").style.display = 'none';
+    }
+});
+
 
     function startTimer() {
         timerInterval = setInterval(updateTimer, 1000);
+        addToInventory2('Indice 1 : Une feuille déchirée a été retrouvée sur la scène du crime')
+        addToInventory2('Indice 2 : Cette feuille semble être une prescription médicale manuscrite')
+        addToInventory2('Indice 3 : Le médicament prescrit est extrêmement rare et spécifique')
+        addToInventory2('Indice 4 : Une analyse plus poussée du papier retrouvé sur la scène révèle qu’il provient d’un carnet médical spécifique, utilisé exclusivement dans les cabinets privés du quartier de Bloomsbury. Ce type de carnet n’est fourni qu’à certains médecins enregistrés auprès de la Royal Medical Society, dont un seul a un accès régulier au domicile d’Hawthorne.')
     }
 
     function updateTimer() {
@@ -154,6 +195,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!inventoryItems.innerHTML.includes(item)) {
             inventoryItems.appendChild(newItem);
         }
+    }
 
+    function addToInventory2(item) {
+        const newItem = document.createElement('div');
+        newItem.textContent = item;
+        newItem.className = 'inventory-item';
+        if (!inventoryItems2.innerHTML.includes(item)) {
+            inventoryItems2.appendChild(newItem);
+        }
     }
 });
