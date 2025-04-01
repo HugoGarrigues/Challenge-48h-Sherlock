@@ -59,9 +59,34 @@ Le projet suit l’enquête sur la disparition d’un manuscrit inédit d’Edmu
 ---
 
 ## Structure du Projet
-
-/Projet-Enquete-Manuscrit-Egaré ├── README.md # Ce fichier ├── index.html # Page d'accueil ├── enigme1/ │ ├── enigme1.html # Énigme 1 : La Citation Masquée │ ├── enigme1.css │ └── script.js ├── enigme2/ │ └── enigme2.html # Énigme 2 : L'Article Incriminant ├── enigme3/ │ ├── enigme3.html # Énigme 3 : Le Code Couleur Caché │ ├── enigme3.css │ └── script.js ├── enigme4/ │ └── enigme4.html # Énigme 4 : Le Coffre de la Tour ├── enigme5/ │ ├── enigme5.html # Énigme 5 : L'Affaire du Code Secret │ ├── enigme5.css │ └── enigme5.js └── assets/ # Images, sons et autres ressources
-
+```
+ Enigme1
+│   ├── enigme1.css
+│   └── enigme1.html
+├── Enigme2
+│   ├── chal2.js
+│   ├── challenge2.html
+│   └── style_chal2.css
+├── Enigme3
+│   ├── enigme3.css
+│   ├── enigme3.html
+│   └── script.js
+├── Enigme4
+│   ├── enigme4.css
+│   ├── enigme4.html
+│   └── enigme4.js
+├── Enigme5
+│   ├── enigme5.css
+│   ├── enigme5.html
+│   ├── enigme5.js
+│   └── assets
+├── modules.xml
+├── page-acceuil
+│   ├── main.css
+│   └── main.html
+├── projet-48h.iml
+└── vcs.xml
+```
 ---
 
 ## Installation
