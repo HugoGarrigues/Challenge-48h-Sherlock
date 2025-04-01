@@ -45,13 +45,13 @@
             function checkSentence() {
                 const message = document.getElementById("message");
                 if (JSON.stringify(userSentence) === JSON.stringify(correctOrder)) {
-                    message.textContent = "Féllicitations !";
-                    message.style.color = "green";
+                    message.textContent = "Indice: Une feuille déchirée a été retrouvée sur la scène du crime... !";
+                    message.style.color = "white";
 
                     // Redirection après une petite pause (1 seconde)
                     setTimeout(() => {
                         window.location.href = "../Enigme2/challenge2.html";
-                    }, 1000);
+                    }, 3000);
                 } else {
                     message.textContent = "Essayez encore !";
                     message.style.color = "red";
