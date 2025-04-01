@@ -352,4 +352,50 @@ button:hover {
     margin-bottom: 20px;
 }
 
+.congratulaations {
+    padding: 30px;
+    background-color: rgba(210, 180, 140, 0.3);
+    border-radius: 8px;
+    margin-top: 30px;
+    display: none;
+}
 
+.congratulaations h2 {
+    color: gold;
+}
+
+.suspect-btn {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+
+.suspect-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.suspect-card {
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+}
+
+.suspect-details {
+    flex-grow: 1;
+}
+
+.suspect-details p {
+    margin: 10px 0;
+}

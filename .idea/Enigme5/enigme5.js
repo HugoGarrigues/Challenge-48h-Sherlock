@@ -121,11 +121,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
 
-    let selectedSuspect = null; // Variable pour stocker le suspect choisi
+    let selectedSuspect = null;
 
-// Écouteurs d'événements pour les boutons des suspects
 document.getElementById("suspect1").addEventListener("click", function() {
     selectedSuspect = 1;
+    gettElementById("congratulations-suspect1").style.display = 'block';
     updateFinalButtonState();
 });
 
@@ -159,9 +159,16 @@ document.getElementById('finalButton').addEventListener('click', function() {
         clearInterval(timerInterval);
         document.getElementById("congratulations").style.display = 'block';
         document.getElementById("wrongAnswer").style.display = 'none';
+        document.querySelectorAll('.congratulaations').forEach(function(desc) {
+            desc.style.display = 'none';
+        });
+
     } else {
         document.getElementById("wrongAnswer").style.display = 'block';
         document.getElementById("congratulations").style.display = 'none';
+        document.querySelectorAll('.congratulaations').forEach(function(desc) {
+            desc.style.display = 'none';
+        });
     }
 });
 
@@ -171,7 +178,7 @@ document.getElementById('finalButton').addEventListener('click', function() {
         addToInventory2('Indice 1 : Une feuille déchirée a été retrouvée sur la scène du crime')
         addToInventory2('Indice 2 : Cette feuille semble être une prescription médicale manuscrite')
         addToInventory2('Indice 3 : Le médicament prescrit est extrêmement rare et spécifique')
-        addToInventory2('Indice 4 : Une analyse plus poussée du papier retrouvé sur la scène révèle qu’il provient d’un carnet médical spécifique, utilisé exclusivement dans les cabinets privés du quartier de Bloomsbury. Ce type de carnet n’est fourni qu’à certains médecins enregistrés auprès de la Royal Medical Society, dont un seul a un accès régulier au domicile d’Hawthorne.')
+        addToInventory2('Indice 4 : Le papier retrouvé provient d\'un manuscrit médical rejeté par plusieurs éditeurs')
     }
 
     function updateTimer() {
@@ -205,4 +212,47 @@ document.getElementById('finalButton').addEventListener('click', function() {
             inventoryItems2.appendChild(newItem);
         }
     }
+
+function showSuspectInfo(suspectId) {
+    document.querySelectorAll('.congratulations').forEach(function(desc) {
+        desc.style.display = 'none';
+    });
+    document.querySelectorAll('.congratulaations').forEach(function(desc) {
+        desc.style.display = 'none';
+    });
+
+    document.getElementById('congratulations-suspect' + suspectId).style.display = 'block';
+    
+    document.getElementById('finalButton').disabled = false;
+}
+
+document.getElementById('suspect1').addEventListener('click', function() {
+    showSuspectInfo(1);
 });
+
+document.getElementById('suspect2').addEventListener('click', function() {
+    showSuspectInfo(2);
+});
+
+document.getElementById('suspect3').addEventListener('click', function() {
+    showSuspectInfo(3);
+});
+
+document.getElementById('suspect4').addEventListener('click', function() {
+    showSuspectInfo(4);
+});
+
+document.getElementById('finalButton').addEventListener('click', function() {
+    const selectedSuspect = document.querySelector('.suspect-btn.selected');
+    if (selectedSuspect) {
+        const suspectId = parseInt(selectedSuspect.id.replace('suspect', ''));
+        if (suspectId === 3) {
+
+            document.getElementById('congratulations').style.display = 'block';
+        }
+    }
+});
+
+});
+
+
