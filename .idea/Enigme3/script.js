@@ -16,17 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".container").appendChild(retryButton);
     retryButton.addEventListener("click", resetGame);
 
-    const restartButton = document.createElement("button");
-    restartButton.textContent = "Recommencer";
-    restartButton.style.display = "none";
-    restartButton.classList.add("restart-button");
-    document.querySelector(".container").appendChild(restartButton);
-    restartButton.addEventListener("click", function() {
-        resetGame();
-        restartButton.style.display = "none";
-    });
-
-
+    
     function pressColor(letter) {
         if (isProcessing) return; // Empêcher le spam de clics
         isProcessing = true;
@@ -56,8 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             failedAttempts = 0;
             // Affiche le bouton "Suivant" uniquement si le code est correct
             document.querySelector(".back-button").style.display = "inline-block";
-            // On affiche également le bouton de réinitialisation si besoin
-            restartButton.style.display = "block";
+
         } else {
             failedAttempts++;
             result.textContent = "Ce n'est pas le bon code.";
