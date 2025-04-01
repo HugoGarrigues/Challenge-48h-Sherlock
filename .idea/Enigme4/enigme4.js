@@ -53,7 +53,7 @@ function animationOuverture() {
 
     setTimeout(() => {
         window.location.href = '../Enigme5/enigme5.html';
-    }, 5000);
+    }, 7000);
 }
 
 document.querySelector('.enigme4-btn-verifier').addEventListener('click', () => {
