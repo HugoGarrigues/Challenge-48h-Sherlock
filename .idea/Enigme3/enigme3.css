@@ -82,3 +82,17 @@ body {
     color: white;
     border-radius: 20px;
 }
+
+.back-button {
+    display: none; /* Masqué par défaut */
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #008d97;
+    color: white;
+    border-radius: 20px;
+}
+
+.back-button:hover {
+    background-color: #00c681;
+}

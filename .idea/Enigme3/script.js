@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function pressColor(letter) {
         if (isProcessing) return; // Empêcher le spam de clics
         isProcessing = true;
-        
+
         if (clickIndex < circles.length) {
             if (isCorrectSoFar && letter === codeSequence[clickIndex]) {
                 circles[clickIndex].style.backgroundColor = "green";
@@ -51,25 +51,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkCode() {
         if (userInput === codeSequence) {
-            result.textContent = "Bravo ! Vous avez trouvé le code secret !";
-            result.style.color = "green";
+            result.textContent = "Indice: Le médicament prescrit est extrêmement rare et spécifique.";
+            result.style.color = "black";
             failedAttempts = 0;
+            // Affiche le bouton "Suivant" uniquement si le code est correct
+            document.querySelector(".back-button").style.display = "inline-block";
+            // On affiche également le bouton de réinitialisation si besoin
             restartButton.style.display = "block";
-            
         } else {
             failedAttempts++;
-            result.textContent = "Désolé, ce n'est pas le bon code.";
+            result.textContent = "Ce n'est pas le bon code.";
             result.style.color = "red";
             retryButton.style.display = "block";
 
             if (failedAttempts === 3) {
-            result .textContent = "Trop d'échecs ! Voici un indice : lis bien l'article !";
-            result.style.color = "black";
+                result.textContent = "Trop d'échecs ! Voici un indice : lis bien l'article !";
+                result.style.color = "black";
             }
 
             if (failedAttempts === 5) {
-            result .textContent = "Indice : L'article contient le code couleur des cercles !";
-                result.style.display = "black";
+                result.textContent = "Indice : L'article contient le code couleur des cercles !";
+                // Correction éventuelle : on pourrait ajuster ici plutôt que result.style.display = "black";
             }
         }
         isProcessing = false;
@@ -84,7 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
             circle.style.backgroundColor = "transparent";
         });
         retryButton.style.display = "none";
+        // Masquer le bouton "Suivant" lors de la réinitialisation
+        document.querySelector(".back-button").style.display = "none";
     }
+
 
     window.pressColor = pressColor;
 });
