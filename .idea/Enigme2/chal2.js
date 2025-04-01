@@ -14,11 +14,15 @@ function checkAnswer() {
 
         document.getElementById("nextButton").style.display = "block";
 
+        const phraseElement = document.querySelector("footer h2");
+        if (phraseElement) {
+            phraseElement.style.display = "none";
+        }
+
         if (errorMessage) {
             errorMessage.textContent = "";
         }
     } else {
-        
         if (!errorMessage) {
             const errorText = document.createElement("p");
             errorText.id = "errorMessage";
