@@ -57,5 +57,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function nextPage() {
-    window.location.href = "enigme3.html"; 
+    window.location.href = "../Enigme3/enigme3.html";
 }

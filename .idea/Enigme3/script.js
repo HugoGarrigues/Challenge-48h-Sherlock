@@ -10,11 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const hintElement = document.getElementById("hint");
     const result = document.getElementById("result");
     const retryButton = document.createElement("button");
-    retryButton.textContent = "Réessayer";
-    retryButton.style.display = "none";
-    retryButton.classList.add("retry-button");
-    document.querySelector(".container").appendChild(retryButton);
-    retryButton.addEventListener("click", resetGame);
 
 
     // Création du bouton "Passer à l'énigme suivante"
@@ -52,31 +47,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkCode() {
         if (userInput === codeSequence) {
-            result.textContent = "Bravo ! Vous avez trouvé le code secret !";
-            result.style.color = "green";
+            result.textContent = "Indice : Le médicament prescrit est extrêmement rare et spécifique.";
+            result.style.color = "black";
             failedAttempts = 0;
+            document.querySelector(".back-button").style.display = "inline-block";
 
-            retryButton.style.display = "none"; // Cacher le bouton "Réessayer"
-            nextPageButton.style.display = "block"; // Afficher le bouton "Suivant"
         } else {
             failedAttempts++;
-            result.textContent = "Désolé, ce n'est pas le bon code.";
+            result.textContent = "Ce n'est pas le bon code.";
             result.style.color = "red";
-            retryButton.style.display = "block"; // Afficher le bouton "Réessayer"
-
             if (failedAttempts === 3) {
                 result.textContent = "Trop d'échecs ! Voici un indice : lis bien l'article !";
                 result.style.color = "black";
             }
-
             if (failedAttempts === 5) {
                 result.textContent = "Indice : L'article contient le code couleur des cercles !";
-                result.style.color = "black";
-
             }
         }
+        // Affiche toujours le bouton "Recommencer" pour permettre de réessayer, même en cas d'erreur
+        restartButton.style.display = "block";
         isProcessing = false;
     }
+
+
 
     function resetGame() {
         userInput = "";
@@ -86,9 +79,11 @@ document.addEventListener("DOMContentLoaded", function () {
         circles.forEach(circle => {
             circle.style.backgroundColor = "transparent";
         });
-      
-        retryButton.style.display = "none"; // Cacher le bouton "Réessayer"
+        retryButton.style.display = "none";
+        // Masquer le bouton "Suivant" lors de la réinitialisation
+        document.querySelector(".back-button").style.display = "none";
     }
+
 
     window.pressColor = pressColor;
 });
