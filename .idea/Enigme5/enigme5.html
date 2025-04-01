@@ -1,10 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Affaire du Code Secret - Une Énigme de Sherlock Holmes</title>
+    <link rel="stylesheet" href="enigme5.css">
+    <script src="enigme5.js"></script>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>L'Affaire du Code Secret</h1>
+            <h2>Une Énigme de Sherlock Holmes</h2>
+        </header>
+        
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        
+        <div class="timer" id="timer">Temps: 00:00</div>
+        
+        <div class="intro">
+            <p>Maintenant que vous avez rassemblé tous les indices, une dernière étape cruciale vous attend. Un télégramme codé vient d’arriver, contenant l’information décisive qui vous permettra d’identifier le coupable. Mais attention, ce message est protégé par un code de sécurité !</p>
+            <p>   Saurez-vous le déchiffrer avant qu’il ne soit trop tard ? L’avenir de l’Empire britannique repose entre vos mains…</p> 
+        </div>
+        
+        <div class="game-area">
+            <div class="scene active" id="scene1">
+                <h2>Acte I - 221B Baker Street</h2>
+                <p>Vous êtes dans l'appartement de Sherlock Holmes. Vous apprenez qu'un document a été volé au Ministère des Affaires Étrangères. <br> <br> Sur la table du salon se trouve l'édition du matin du Times. En parcourant ses pages, un article attire votre attention...</p>
+                
+                <div class="newspaper">
+                    <h3>THE LONDON TIMES - 1<span class="hidden-message" id="hiddenMessage1">5</span> OCTOBRE 1895</h3>
+                    <p>EXPOSITION DE BIJOUX HISTORIQUES AU BRITISH MUSEUM</p>
+                    <p>Le British Museum accueillera dès demain une exposition exceptionnelle de bijoux historiques, dont la célèbre "Perle des Bourbons", un joyau ayant appartenu à Marie-Antoinette.</p>
+                    <p>La sécurité a été renforcée suite à des rumeurs d'un possible cambriolage. Scotland Yard a dépêché ses meilleurs hommes pour surveiller l'exposition.</p>
+                    <p>Par ailleurs, plusieurs personnalités sont attendues pour le vernissage, dont le professeur James Winterfield de l'Université d'Oxford, spécialiste de l'histoire des joyaux de la couronne.</p>
+                </div>
+                
+                <p>Quelque chose vous semble suspect dans cet article..</p>
+                
+                <div class="input-area">
+                    <input type="text" id="answer1" placeholder="Entrez votre réponse...">
+                    <button id="submit1">Soumettre</button>
+                    <div class="message" id="message1"></div>
+                </div>
+            </div>
+            
+            <div class="scene" id="scene2">
+                <h2>Acte II - La Bibliothèque</h2>
+                <p>Le chiffre 5 semble être un indice. Vous décidez de consulter les archives personnelles de Holmes. Dans sa bibliothèque, vous trouvez un livre sur les criminels notoires de Londres avec une page cornée:</p>
+                
+                <div class="book-page">
+                    <p>...Parmi les associés connus du professeur Moriarty, on compte plusieurs experts en cryptographie et en langues anciennes. L'un d'eux, James Mortimer, est particulièrement doué pour les codes basés sur des substitutions complexes.</p> <p>Mortimer a été vu pour la dernière fois fréquentant le Diogenes Club, sous un faux nom. Il utilise souvent un système de chiffrement personnel basé sur la méthode de Vigenère, mais avec une particularité qui lui est propre.</p> <p>Les archives révèlent que sa clé de chiffrement favorite est en lien avec un objet souvent utilisé par les détectives et les observateurs attentifs. Cet objet leur permet de scruter de plus près les détails les plus minimes, parfois invisibles à l'œil nu...</p> <p>Il a également laissé plusieurs messages cryptés lors de ses derniers méfaits, dont celui-ci, jamais déchiffré :</p>
+                    <p style="font-family: 'Courier New', monospace; text-align: center; margin: 20px 0; letter-spacing: 2px;">
+                        FB MTYW TUXX ASOI ZLZIXV XWFAI DIJESDWNXSYG
+                    </p>
+                    <p>Ce message pourrait contenir des informations cruciales sur ses prochaines cibles...</p>
+                </div>
+                
+                <p>Vous devez décrypter ce message. Quel objet est associé à la clé de Mortimer?</p>
+                
+                <div class="input-area">
+                    <input type="text" id="answer2" placeholder="Entrez le nom de l'objet...">
+                    <button id="submit2">Soumettre</button>
+                    <div class="message" id="message2"></div>
+                </div>
+            </div>
+            
+            <div class="scene" id="scene3">
+                <h2>Acte III - Déchiffrement du Code</h2>
+                <p>Maintenant que vous savez que la clé du chiffre est "LOUPE", vous pouvez déchiffrer le message de Mortimer.</p>
+                
+                <div class="document">
+                    <p>Message chiffré:</p>
+                    <p style="font-family: 'Courier New', monospace; text-align: center; margin: 20px 0; letter-spacing: 2px;">
+                        FB MTYW TUXX ASOI ZLZIXV XWFAI DIJESDWNXSYG
+                    </p>
+                    <p>Clé: LOUPE</p>
+                </div>
+                
+                <p>Pour déchiffrer ce message, vous devez utiliser la méthode de Vigenère. La solution révélera l'emplacement du document volé.</p>
+                
+                <div class="input-area">
+                    <input type="text" id="answer3" placeholder="Entrez le message déchiffré...">
+                    <button id="submit3">Soumettre</button>
+                    <div class="message" id="message3"></div>
+                </div>
+            </div>
+            
+            <div class="scene" id="scene4">
+                <h2>Acte IV - Pont de la Tour</h2>
+                <p>Le message déchiffré indique "UN SEUL FAIT PEUT VALOIR MILLE SUPPOSITIONS". Cela fait référence au Pont de la Tour (Tower Bridge), récemment inauguré, dont les piliers contiennent des chambres secrètes.</p>
+                
+                <p>Vous vous rendez au pont et trouvez l'entrée cachée du pilier nord. À l'intérieur, un étrange mécanisme protège un coffre. Sur le mécanisme est gravée cette énigme:</p>
+                
+                <div class="document">
+                    <p style="text-align: center;">
+                        "Je suis ce que l'homme cherche mais craint de trouver.<br>
+                        Je révèle les secrets mais en crée de nouveaux.<br>
+                        Sans moi, Holmes serait ordinaire.<br>
+                        Avec moi, même l'impossible devient explicable.<br>
+                        Je commence la déduction et termine la révélation."
+                    </p>
+                </div>
+                
+                <p>Quel est le mot de passe qui ouvrira le coffre?</p>
+                
+                <div class="input-area">
+                    <input type="text" id="answer4" placeholder="Entrez le mot de passe...">
+                    <button id="submit4">Soumettre</button>
+                    <div class="message" id="message4"></div>
+                </div>
+            </div>
+            
+            <div class="scene" id="scene5">
+                <h2>Acte V - Le Document Secret</h2>
+                <p>La porte du coffre s'ouvre en craquant. À l'intérieur, vous trouvez le document volé! Mais il semble incomplet. Une note de Moriarty est attachée:</p>
+                
+                <div class="document">
+                    <p>"Bien joué, détective amateur. Vous avez récupéré une partie du document, mais pas la plus importante. J'ai divisé le code en deux parties et caché la seconde là où tout a commencé. Quatre chiffres vous y mèneront.</p>
+                    <p>Si les murs pouvaient parler à Baker Street, ils vous donneraient ces chiffres. Cherchez bien, ils sont devant vos yeux depuis le début."</p>
+                </div>
+                
+                <p>Vous devez retrouver les quatre chiffres cachés dans l'appartement de Holmes. Réfléchissez à ce que vous avez vu depuis le début de cette enquête.</p>
+                
+                <div class="input-area">
+                    <input type="text" id="answer5" placeholder="Entrez les quatre chiffres...">
+                    <button id="submit5">Soumettre</button>
+                    <div class="message" id="message5"></div>
+                </div>
+            </div>
 
+
+            <div class="scene" id="scene6">
+                <h2>Acte Final - La Résolution</h2>
+                <p>Avec le code "5517", vous avez enfin accès à ce télégramme qui va vous permettre d'identifier le coupable.</p>
+            
+                <div class="document">
+                    <div class="suspects">
+                        <button id="suspect1" class="suspect-btn">
+                            <img src="image.jpg" alt="Lord Archibald Green" class="suspect-img">
+                            Lord Archibald Green
+                        </button>
+                        <button id="suspect2" class="suspect-btn">
+                            <img src="image (1).jpg" alt="Mlle Violet Carter" class="suspect-img">
+                            Mlle Violet Carter  <br> <br>   
+                        </button>
+                        <button id="suspect3" class="suspect-btn">
+                            <img src="image (2).jpg" alt="Dr Henry Fitzroy" class="suspect-img">
+                            Dr Henry Fitzroy <br> <br>  
+                        </button>
+                        <button id="suspect4" class="suspect-btn">
+                            <img src="image(3).jpg" alt="Mme Margaret Winstone" class="suspect-img">
+                            Mme Margaret Winstone 
+                        </button>
+                    </div>
+                </div>
+
+                <div class="congratulaations" id="congratulations-suspect1" style="display: none;">
+                    <div class="suspect-card">
+                        <div class="suspect-details">
+                            <p><strong>Âge :</strong> 56 ans</p>
+                            <p><strong>Profession :</strong> Homme politique influent</p>
+                            <p><strong>Lien avec la victime :</strong> Ami proche mais également rival de longue date d’Edmund Hawthorne, connu pour critiquer publiquement ses romans.</p>
+                            <p><strong>Mobile potentiel :</strong> Désire discréditer Hawthorne, craignant que le manuscrit contienne des révélations compromettantes sur sa vie privée ou ses affaires politiques.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="congratulaations" id="congratulations-suspect2" style="display: none;">
+                    <div class="suspect-card">
+                        <div class="suspect-details">
+                            <p><strong>Âge :</strong> 34 ans</p>
+                            <p><strong>Profession :</strong> Secrétaire personnelle d’Edmund Hawthorne</p>
+                            <p><strong>Lien avec la victime :</strong> Responsable de la transcription et du rangement des manuscrits de l'auteur.</p>
+                            <p><strong>Mobile potentiel :</strong> Soupçonnée d'avoir secrètement revendu des brouillons précédents à des collectionneurs fortunés pour rembourser une dette de jeu importante.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="congratulaations" id="congratulations-suspect3" style="display: none;">
+                    <div class="suspect-card">
+                        <div class="suspect-details">
+                            <p><strong>Âge :</strong> 47 ans</p>
+                            <p><strong>Profession :</strong> Médecin personnel et ami intime d’Hawthorne</p>
+                            <p><strong>Lien avec la victime :</strong> Accès permanent au domicile et au bureau de l’écrivain, confident régulier.</p>
+                            <p><strong>Mobile potentiel :</strong> Jaloux du succès croissant d’Hawthorne, il a secrètement écrit un manuscrit concurrent rejeté par tous les éditeurs. Il espère ruiner la réputation de son ami pour enfin publier son propre ouvrage.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="congratulaations" id="congratulations-suspect4" style="display: none;">
+                    <div class="suspect-card">
+                        <div class="suspect-details">
+                            <p><strong>Âge :</strong> 62 ans</p>
+                            <p><strong>Profession :</strong> Libraire et collectionneuse passionnée d’œuvres rares</p>
+                            <p><strong>Lien avec la victime :</strong> Connue pour son obsession envers les manuscrits inédits et rares, elle avait récemment essayé en vain de persuader Hawthorne de lui vendre son dernier ouvrage inédit.</p>
+                            <p><strong>Mobile potentiel :</strong> Obtenir le manuscrit pour le revendre à prix d'or dans les cercles littéraires clandestins.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="input-area">
+                    <button id="finalButton" disabled>Conclure l'enquête</button>
+                </div>
+            
+                <div class="congratulations" id="congratulations" style="display: none;">
+                    <h2>Félicitations, détective!</h2>
+                    <p>Vous avez résolu toutes les énigmes et sauvé l'Empire britannique d'une crise diplomatique majeure.</p>
+                    <p>Votre performance: <span id="finalTime">00:00</span></p>
+                    <p>Sherlock Holmes serait fier de vous!</p>
+                </div>
+            
+                <div class="congratulations" id="wrongAnswer" style="display: none;">
+                    <h2>Oups ce n'était pas le bon suspect !</h2>
+                    <p>Malheuresement l'Empire britannique va subir une crise diplomatique majeure uniquement a cause de vous.</p>
+                </div>
+            </div>
+            
+        <div class="inventory">
+            <h3>Indices Collectés</h3>
+            <div class="inventory-items" id="inventoryItems">
+            </div>
+        </div>
+
+        <div class="inventory">
+            <h3>Indices Collectés précedemment</h3>
+            <div class="inventory-items" id="inventoryItems2">
+            </div>
+        </div>
+    </div>    
 </body>
 </html>
