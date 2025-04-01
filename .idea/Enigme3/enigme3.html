@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme 3 - Le Code Couleur Caché</title>
+    <link rel="stylesheet" href="enigme3.css">
 </head>
 <body>
+    <div class="container">
+        <h2>Le Code Couleur Caché</h2>
+        <p>Appuyez sur les boutons colorés dans le bon ordre pour révéler le mot secret.</p>
+        <div class="button-container">
+            <button class="color-button" id="blue" onclick="pressColor('B')"></button>
+            <button class="color-button" id="red" onclick="pressColor('R')"></button>
+            <button class="color-button" id="yellow" onclick="pressColor('J')"></button>
+            <button class="color-button" id="green" onclick="pressColor('V')"></button>
+        </div>
 
+        <div class="circle-container">
+            <div class="circle" id="circle1"></div>
+            <div class="circle" id="circle2"></div>
+            <div class="circle" id="circle3"></div>
+            <div class="circle" id="circle4"></div>
+        </div>
+
+        <p id="result"></p>
+        <a href="main.html" class="back-button">Retour à l'accueil</a>
+    </div>
+    <div class="background-article">
+        <h2>Sherlock Holmes - Le détective légendaire</h2>
+        <p>Sherlock Holmes, détective légendaire créé par Sir Arthur Conan Doyle en 1887, incarne le raisonnement logique et la déduction. Son premier roman, "Une étude en rouge", marque le début d’un succès mondial.</p>
+        <p>Vêtu de son célèbre manteau, il excelle dans l’observation et l’analyse. Dans "Le Signe des quatre", il relie des indices subtils pour élucider une affaire complexe. Aux côtés du Dr Watson, il explore les ruelles brumeuses de Londres, où chaque détail compte.</p>
+        <p>Bien qu’absorbé par ses pensées, il trouve parfois refuge dans son violon ou la contemplation d’un ciel bleu profond. Son tempérament méthodique contraste avec l’impulsivité de Watson.</p>
+        <p>Ses enquêtes révèlent des complots insoupçonnés et des mystères intrigants, comme dans "L'Aventure du ruban moucheté", où les indices sont aussi subtils qu’un rayon jaune filtrant à travers un rideau. Son caractère oscille entre rigueur scientifique et excentricité, tel une prairie verte balayée par le vent.</p>
+        <p>Aujourd’hui encore, Holmes fascine et inspire films, séries et adaptations modernes, perpétuant le charme du plus grand détective de la littérature.</p>
+    </div>
+    <script src="../Enigme3/script.js"></script>
 </body>
 </html>
