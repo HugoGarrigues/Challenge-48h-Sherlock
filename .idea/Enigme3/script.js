@@ -9,14 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const circles = document.querySelectorAll(".circle");
     const hintElement = document.getElementById("hint");
     const result = document.getElementById("result");
-
-    // Création du bouton "Réessayer"
     const retryButton = document.createElement("button");
     retryButton.textContent = "Réessayer";
     retryButton.style.display = "none";
     retryButton.classList.add("retry-button");
     document.querySelector(".container").appendChild(retryButton);
     retryButton.addEventListener("click", resetGame);
+
 
     // Création du bouton "Passer à l'énigme suivante"
     const nextPageButton = document.createElement("button");
@@ -44,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (userInput.length === codeSequence.length) {
                 setTimeout(checkCode, 500); // Laisser le temps d'afficher la couleur avant de vérifier
+
             } else {
                 isProcessing = false;
             }
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             result.textContent = "Bravo ! Vous avez trouvé le code secret !";
             result.style.color = "green";
             failedAttempts = 0;
+
             retryButton.style.display = "none"; // Cacher le bouton "Réessayer"
             nextPageButton.style.display = "block"; // Afficher le bouton "Suivant"
         } else {
@@ -71,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (failedAttempts === 5) {
                 result.textContent = "Indice : L'article contient le code couleur des cercles !";
                 result.style.color = "black";
+
             }
         }
         isProcessing = false;
@@ -84,8 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
         circles.forEach(circle => {
             circle.style.backgroundColor = "transparent";
         });
+      
         retryButton.style.display = "none"; // Cacher le bouton "Réessayer"
     }
 
     window.pressColor = pressColor;
 });
+

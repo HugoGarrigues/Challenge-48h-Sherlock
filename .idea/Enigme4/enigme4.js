@@ -50,6 +50,10 @@ function animationOuverture() {
         const coffre = document.querySelector('.enigme4-coffre');
         coffre.innerHTML = '<div class="enigme4-manuscrit">📜 Bravo, vous avez percé le mystère ! 📜</div>';
     }, 2000);
+
+    setTimeout(() => {
+        window.location.href = '../Enigme5/enigme5.html';
+    }, 10000);
 }
 
 document.querySelector('.enigme4-btn-verifier').addEventListener('click', () => {
@@ -65,7 +69,7 @@ document.querySelector('.enigme4-btn-verifier').addEventListener('click', () => 
 
         setTimeout(() => {
             resetCoffre();
-            afficherIndices(); // affiche les indices selon le nombre de tentatives
+            afficherIndices(); 
             resultat.textContent = '🔄 Le coffre est réinitialisé. Réessayez.';
             resultat.style.color = '#ccc';
         }, 2000);
